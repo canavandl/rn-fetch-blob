@@ -123,7 +123,7 @@ function mkdir(path: string): Promise {
   if (typeof path !== 'string') {
     return Promise.reject(addCode('EINVAL', new TypeError('Missing argument "path" ')))
   }
-  return RNFetchBlob.mkdir(path)
+  return RNFetchBlob.mkdir(path, () => {})
 }
 
 /**
